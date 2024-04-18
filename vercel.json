@@ -12,7 +12,7 @@
       "dest": "/src/routes/auth" 
     },
     {
-      "src": "/tasks/", 
+      "src": "/tasks/(.*)", 
       "dest": "/src/routes/tasks" 
     }
   ]
