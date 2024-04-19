@@ -8,7 +8,15 @@
   ],
   "routes": [
     {
-      "src": "(.*)", 
+      "src": "(.*)",
+      "dest": "/src/index.js"
+    },
+    {
+      "src": "/auth/(.*)", 
+      "dest": "/src/index.js" 
+    },
+    {
+      "src": "/task", 
       "dest": "/src/index.js" 
     }
   ]
