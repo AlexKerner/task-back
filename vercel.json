@@ -13,11 +13,11 @@
     },
     {
       "src": "/auth/(.*)", 
-      "dest": "/src/index.js" 
+      "dest": "/src/routes/auth.js" 
     },
     {
       "src": "/task", 
-      "dest": "/src/index.js" 
+      "dest": "/src/routes/tasks.js" 
     }
   ]
 }
