@@ -10,3 +10,4 @@ app.use(cors());
 app.use("/auth", authRoutes);
 app.use("/tasks", tasksRoutes)
 
+module.exports = app;
