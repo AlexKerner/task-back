@@ -3,12 +3,12 @@ const router = express.Router();
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-router.get("/tasks", async (req, res) => {
+router.get("/", async (req, res) => {
   const tasks = await prisma.task.findMany();
   return res.status(200).json({ tasks });
 });
 
-router.patch("/tasks", async (req, res) => {
+router.patch("/", async (req, res) => {
   const { id, completed, title } = await req.body;
   try {
     const task = await prisma.task.update({
@@ -24,7 +24,7 @@ router.patch("/tasks", async (req, res) => {
   } catch (error) {}
 });
 
-router.post("/tasks", async (req, res) => {
+router.post("/", async (req, res) => {
   const { title, userId } = await req.body;
   try {
     const task = await prisma.task.create({
@@ -40,7 +40,7 @@ router.post("/tasks", async (req, res) => {
   }
 });
 
-router.delete("/tasks", async (req, res) => {
+router.delete("/", async (req, res) => {
   const { id } = await req.body;
   try {
     const task = await prisma.task.delete({

@@ -6,7 +6,7 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 
-router.post("/auth/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await prisma.user.findUnique({
@@ -27,7 +27,7 @@ router.post("/auth/login", async (req, res) => {
 });
 
 
-router.post("/auth/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   const { email, password } = req.body;
   try {
     const existingUser = await prisma.user.findUnique({
@@ -55,7 +55,7 @@ router.post("/auth/register", async (req, res) => {
   }
 });
 
-router.delete("/auth/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   const { id } = req.params; // Pegando o parâmetro de rota (ID)
   try {
     const user = await prisma.user.delete({
@@ -70,7 +70,7 @@ router.delete("/auth/:id", async (req, res) => {
   }
 });
 
-router.get("/auth/users", async (req, res) => {
+router.get("/users", async (req, res) => {
   const usersWithTasks = await prisma.user.findMany({
     include: {
       tasks: true // Carrega as tarefas relacionadas a cada usuário
