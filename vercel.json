@@ -16,7 +16,7 @@
       "dest": "/src/routes/auth.js" 
     },
     {
-      "src": "/task", 
+      "src": "/tasks", 
       "dest": "/src/routes/tasks.js" 
     }
   ]
